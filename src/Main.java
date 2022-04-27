@@ -91,7 +91,11 @@ public class Main {
         writeTempFile(info, pathTemp);
 
         Optional<GameProgress> a = loadingSaving(Paths.get(zipPath.getParent() + separator + "save3.dat"));
-        System.out.println(a);
+        GameProgress loadingSaving = null;
+        if(a.isPresent()) {
+            loadingSaving = a.get();
+        }
+        System.out.println(loadingSaving);
 
 
     }
